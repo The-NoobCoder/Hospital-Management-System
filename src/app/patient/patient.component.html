@@ -1,0 +1,100 @@
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+</head>
+
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+</div>
+
+<form>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <legend class="text-center">Valid information is required to register. <span class="req">
+                    <small>required *</small></span>
+                </legend> 
+                <div>
+                    <h3 style="padding-left: 40px;">Patient <span style="border-bottom: 3px solid black;">Re</span>g<span style="border-bottom: 3px solid black;">istration</span> Form</h3>
+                </div>
+                <div>
+                    <div class="form-group col-6"  style="padding-left: 40px; padding-top: 10px;">
+                        <label for="firstName">First Name:</label>
+                        <input required type="text" [(ngModel)]="patient.firstName" name="firstName" id="firstName" 
+                                class="form-control phone" maxlength="30" placeholder="Enter your First Name..." required style="padding-right: 20px;" />
+                    </div>
+                    <div class="form-group col-6"  style="padding-left: 40px; padding-top: 10px;">
+                        <label for="lastName">Last Name:</label>
+                        <input required type="text" [(ngModel)]="patient.lastName" name="lastName" id="lastName"
+                            class="form-control phone" maxlength="30" placeholder="Enter your Last Name..." required style="padding-right: 20px;"/>
+                    </div>
+                </div>
+                <div class=" forn-group col-12"  style="padding-left:40px;">
+                            <label> Gender:</label>
+                </div> 
+                <div class="  col-12" style="font-weight: 300;padding: none;" required>
+                    <div class="col-2" style="padding-left:40px;" >
+                        <input type="radio" [(ngModel)]="patient.gender" name="Gender" value="male" >
+                        <label for="Gender">Male</label>
+                    </div>
+                    <div class="col-2" style=" padding-left: 45px;">
+                        <input type="radio" [(ngModel)]="patient.gender" name="Gender" value="female">
+                        <label for="Gender">Female</label>
+                    </div>
+                    <div class="col-2" style="padding-left: 60px;" >
+                        <input type="radio" [(ngModel)]="patient.gender" name="Gender" value="other">
+                        <label for="Gender">Other</label>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group col-6"  style="padding-left: 40px;">
+                        <label for="address">Address:</label>
+                        <input required type="text" [(ngModel)]="patient.address" name="address" id="address"
+                            class="form-control phone" maxlength="28" placeholder="Enter your address..." required style="padding-right: 20px;"/>
+                    </div>
+                    <div class="form-group col-3"  style="padding-left: 40px;">
+                        <label for="city">City:</label>
+                        <input required type="text" [(ngModel)]="patient.city" name="city" id="city"
+                            class="form-control phone" maxlength="28" placeholder="City..." required style="padding-right: 20px;"/>
+                    </div>
+                    <div class="form-group col-3"  style="padding-left: 40px;">
+                        <label for="pinecode">PinCode:</label>
+                        <input required type="text" [(ngModel)]="patient.pinCode" name="pincode" id="pincode"
+                            class="form-control phone" maxlength="28" placeholder="Pincode..." required style="padding-right: 20px;"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group col-6"  style="padding-left: 40px;">
+                        <label for="email">Email:</label>
+                        <input required type="email" [(ngModel)]="patient.email" name="email" id="email"
+                            class="form-control phone" maxlength="28" placeholder="Enter Email..." required style="padding-right: 20px;"/>
+                    </div>
+                    <div class="form-group col-6"  style="padding-left: 40px;">
+                        <label for="phoneNo">PhoneNO:</label>
+                        <input required type="tel" [(ngModel)]="patient.phoneNo" name="phoneNo" id="phoneNo" required pattern="[0-9]{10}"
+                            class="form-control phone" maxlength="28" placeholder="EnterPhoneNO..." required style="padding-right: 20px;"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group col-6"  style="padding-left: 40px;">
+                        <label for="bloodgroup">Blood Group:</label>
+                        <input required type="text" [(ngModel)]="patient.bloodGroup" name="bloodgroup" id="bloodgroup"
+                            class="form-control phone" maxlength="3" placeholder="Enter BloodGroup..." required style="padding-right: 20px;"/>
+                    </div>
+                    <div class="form-group col-6"  style="padding-left: 40px;">
+                        <label for="healthStatus">Health Status:</label>
+                        <input required type="text" [(ngModel)]="patient.healthStatus" name="healthStatus" id="healthStatus"
+                            class="form-control phone" maxlength="28" placeholder="Enter your Health Status..." required style="padding-right: 20px;"/>
+                    </div>
+                </div>
+                <div class="form-group col-12" style="text-align: center;padding-bottom: 40px;padding-left: 65px;padding-right: 40px;padding-top: 20px;">
+                    <button class="btn btn-success " (click)="registerNow()" value="Register" >
+                        Register
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
